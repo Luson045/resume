@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #2e3440;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .header {
+            background: #3b4252;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header h1 {
+            color: #eceff4;
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+        
+        .download-btn {
+            background: #5e81ac;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: #81a1c1;
+        }
+        
+        .pdf-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        iframe {
+            width: 100%;
+            max-width: 1000px;
+            height: calc(100vh - 100px);
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            background: white;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .header h1 {
+                font-size: 1.2em;
+            }
+            
+            .pdf-container {
+                padding: 10px;
+            }
+            
+            iframe {
+                height: calc(100vh - 120px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>My Resume</h1>
+        <a href="resume.pdf" class="download-btn" download>Download PDF</a>
+    </div>
+    
+    <div class="pdf-container">
+        <iframe src="resume.pdf" type="application/pdf"></iframe>
+    </div>
+</body>
+</html>
